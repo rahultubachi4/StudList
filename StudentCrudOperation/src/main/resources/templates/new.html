@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Create New Student</h1>
+    <br />
+    <div class="col-sm-4 mx-auto">
+        <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+            <div class="form-group">
+                <label for="studentname" class="form-label">Student Name</label>
+                <input type="hidden" th:field="*{id}" />
+                <input type="text" th:field="*{studentname}" id="studentname" class="form-control" placeholder="Student Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="course" class="form-label">Course</label>
+                <input type="text" th:field="*{course}" id="course" class="form-control" placeholder="Course" />
+            </div>
+
+            <div class="form-group">
+                <label for="fee" class="form-label">Fee</label>
+                <input type="text" th:field="*{fee}" id="fee" class="form-control" placeholder="Fee" />
+            </div>
+
+            <br />
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-info">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
